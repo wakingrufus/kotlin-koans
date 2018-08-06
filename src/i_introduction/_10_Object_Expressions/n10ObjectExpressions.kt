@@ -15,9 +15,13 @@ fun todoTask10(): Nothing = TODO(
     """,
     documentation = doc10()
 )
-
+object comparator : Comparator<Int> {
+    override fun compare(p0: Int?, p1: Int?): Int {
+       return p1!!.compareTo(p0!!)
+    }
+}
 fun task10(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, todoTask10())
+    Collections.sort(arrayList, comparator)
     return arrayList
 }
